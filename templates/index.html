@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Fake Voice Detection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 500px;
+            margin: 100px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .upload-box {
+            border: 2px dashed #999;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin: 10px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #eef2ff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Fake Voice Detection</h1>
+
+        <p>Upload an audio file to detect whether the voice is real or AI-generated.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <div class="upload-box">
+
+                <input type="file"
+                       name="audio"
+                       accept=".wav,.mp3"
+                       required>
+
+            </div>
+
+            <button type="submit">Detect Voice</button>
+
+        </form>
+
+        {% if result %}
+            <div class="result">
+                Prediction: {{ result }}
+            </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
