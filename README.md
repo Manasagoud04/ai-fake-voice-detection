@@ -41,3 +41,7 @@ voice-detection/
 ### Real Voice Detection
 
 ![Real Voice Detection](real-voice-result.png)
+
+### Fake Voice Detection
+
+![Fake Voice Detection](fake-voice-result.png)
